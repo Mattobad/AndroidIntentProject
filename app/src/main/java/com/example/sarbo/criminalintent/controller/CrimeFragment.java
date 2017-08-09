@@ -64,6 +64,17 @@ private static final int REQUEST_DATE = 0;
         mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);
     }
 
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        // updating crime
+        CrimeLab.get(getActivity())
+                .updateCrime(mCrime);
+    }
+
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
